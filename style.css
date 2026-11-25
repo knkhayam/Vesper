@@ -1,0 +1,142 @@
+:root {
+  --bg: #060714;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  touch-action: none;
+  user-select: none;
+}
+
+canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: crosshair;
+}
+
+.pane {
+  position: fixed;
+  inset: 16px;
+  border-radius: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.42),
+    inset 0 0 90px rgba(170, 205, 255, 0.06),
+    0 0 0 1px rgba(0, 0, 0, 0.35);
+  background:
+    linear-gradient(118deg, rgba(255, 255, 255, 0.16), transparent 24%, transparent 62%, rgba(255, 255, 255, 0.05));
+  pointer-events: none;
+  z-index: 3;
+}
+
+.pane.broken {
+  border-color: rgba(255, 170, 150, 0.7);
+  box-shadow:
+    inset 0 0 80px rgba(255, 70, 40, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  background:
+    linear-gradient(118deg, rgba(255, 255, 255, 0.1), transparent 30%),
+    repeating-linear-gradient(115deg, transparent 0 18px, rgba(255, 255, 255, 0.05) 18px 19px);
+}
+
+.plate,
+.warnings {
+  position: fixed;
+  z-index: 4;
+  pointer-events: none;
+  font-family: "Segoe UI", Candara, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.plate {
+  top: 34px;
+  left: 36px;
+  color: rgba(255, 248, 236, 0.92);
+  text-shadow: 0 0 16px rgba(120, 170, 255, 0.35);
+}
+
+.plate .mark {
+  margin: 0;
+  font-size: 0.62rem;
+  opacity: 0.62;
+}
+
+.plate .name {
+  margin: 0.15rem 0 0;
+  font-size: 1.15rem;
+  letter-spacing: 0.28em;
+}
+
+.warnings {
+  top: 34px;
+  right: 36px;
+  text-align: right;
+  max-width: min(22rem, 42vw);
+}
+
+.warnings p {
+  margin: 0 0 0.4rem;
+  font-size: 0.68rem;
+  line-height: 1.35;
+}
+
+.warnings .info {
+  color: rgba(255, 236, 210, 0.88);
+}
+
+.warnings .alert {
+  color: #ffb15a;
+}
+
+.warnings .crit {
+  color: #ff5a45;
+  text-shadow: 0 0 12px rgba(255, 60, 40, 0.75);
+}
+
+.tale {
+  position: fixed;
+  left: 50%;
+  bottom: 6.5vh;
+  transform: translateX(-50%);
+  width: min(40rem, 88vw);
+  z-index: 2;
+  pointer-events: none;
+  text-align: center;
+  color: rgba(255, 248, 236, 0.92);
+  font-family: Palatino, "Palatino Linotype", "Iowan Old Style", Georgia, serif;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+}
+
+.tale h1 {
+  margin: 0 0 0.35rem;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.46em;
+  text-transform: uppercase;
+  opacity: 0.78;
+}
+
+.tale .sky {
+  margin: 0 0 0.45rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  opacity: 0.8;
+}
+
+.tale p {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.3vw, 1.4rem);
+  line-height: 1.45;
+}

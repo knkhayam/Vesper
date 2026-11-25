@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vesper</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="scene" aria-label="Vesper dives through a star field. Drag to turn the ship, tap to fly straight, and hold still to speed up. A quick hand slows the dive. Flying into the Sun, a planet, the Moon, a comet, or an asteroid shatters the glass and opens a new sky."></canvas>
+  <div class="pane" aria-hidden="true"></div>
+  <header class="plate">
+    <p class="mark">Ship</p>
+    <p class="name">Vesper</p>
+  </header>
+  <aside class="warnings" id="warn" aria-live="polite"></aside>
+  <section class="tale" aria-live="polite">
+    <h1>Vesper</h1>
+    <p class="sky" id="sky">An unfinished sky.</p>
+    <p id="line">Drag to turn the dive. Tap to fly straight.</p>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
